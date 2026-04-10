@@ -1,0 +1,60 @@
+XAI Evaluation Output
+=====================
+Dataset path: C:\Users\darsh\VSP\Xai_Project\data\dataset.csv
+Samples: 1000 | Features: 20
+
+Model Metrics
+-------------
+Accuracy: 0.7700
+ROC-AUC: 0.8046
+Precision: 0.6522
+Recall: 0.5000
+Confusion Matrix:
+[[124  16]
+ [ 30  30]]
+Feature Importances:
+[8.373828e-02, 9.764478e-02, 3.506471e-02, 2.910051e-02, 7.046626e-02,
+ 1.652113e-02, 9.811944e-03, 2.082388e-02, 4.270313e-02, 7.497236e-03,
+ 8.511458e-02, 5.836895e-03, 2.898087e-02, 9.391440e-03, 1.390573e-02,
+ 5.924934e-03, 6.988315e-03, 4.227427e-04, 6.318679e-03, 1.123512e-02,
+ 1.345405e-02, 4.962261e-04, 1.496537e-02, 1.716719e-03, 5.336644e-05,
+ 9.293315e-03, 7.456158e-03, 4.577186e-03, 2.746322e-02, 5.291473e-03,
+ 1.479595e-02, 1.285955e-02, 1.150214e-02, 1.874823e-02, 1.097462e-02,
+ 4.981438e-03, 1.493698e-02, 4.082630e-03, 5.418366e-03, 1.781363e-02,
+ 3.564404e-03, 5.940251e-03, 7.412749e-03, 1.345409e-02, 1.105384e-02,
+ 1.312751e-02, 1.866157e-02, 1.764633e-02, 1.731894e-02, 3.922656e-03,
+ 6.134895e-03, 1.586851e-02, 9.390528e-03, 1.070016e-02, 1.404934e-02,
+ 1.180146e-03, 1.023539e-02, 1.219898e-02, 1.295111e-02, 3.545178e-03,
+ 3.271632e-03]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.8052    0.8857    0.8435       140
+           1     0.6522    0.5000    0.5660        60
+
+    accuracy                         0.7700       200
+   macro avg     0.7287    0.6929    0.7048       200
+weighted avg     0.7593    0.7700    0.7603       200
+
+
+SHAP Local Accuracy Validation
+------------------------------
+Model prediction: 0.32488596
+SHAP reconstruction: 0.32479911
+Absolute difference: 8.68502989e-05
+
+SHAP vs LIME (Top-10 overlap)
+---------------------------
+Top SHAP features: ['cat__checking_status_no checking', 'cat__checking_status_<0', 'num__duration', 'cat__savings_status_<100', 'cat__credit_history_critical/other existing credit', 'num__credit_amount', 'num__installment_commitment', 'cat__property_magnitude_real estate', 'cat__other_payment_plans_none', 'cat__other_payment_plans_bank']
+Top LIME features (mapped): ['cat__checking_status_no checking', 'cat__checking_status_<0', 'cat__savings_status_<100', 'cat__credit_history_critical/other existing credit', 'num__credit_amount', 'cat__property_magnitude_real estate', 'cat__other_payment_plans_bank', 'cat__employment_<1', 'cat__property_magnitude_no known property', 'cat__checking_status_0<=X<200']
+Overlap count: 7
+Overlapping features: ['cat__checking_status_<0', 'cat__checking_status_no checking', 'cat__credit_history_critical/other existing credit', 'cat__other_payment_plans_bank', 'cat__property_magnitude_real estate', 'cat__savings_status_<100', 'num__credit_amount']
+
+Saved artifacts
+-------------
+- C:\Users\darsh\VSP\Xai_Project\results\plots\shap_summary_plot.png
+- C:\Users\darsh\VSP\Xai_Project\results\plots\shap_force_plot.png
+- C:\Users\darsh\VSP\Xai_Project\results\plots\shap_waterfall_plot.png
+- C:\Users\darsh\VSP\Xai_Project\results\plots\lime_local_explanation.png
+- C:\Users\darsh\VSP\Xai_Project\results\plots\shap_vs_model_importance.png
+- C:\Users\darsh\VSP\Xai_Project\results\method_comparison.csv
