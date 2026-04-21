@@ -13,10 +13,13 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 @dataclass
 class PreprocessArtifacts:
+    X_train_raw: pd.DataFrame
+    X_test_raw: pd.DataFrame
     X_train_transformed: pd.DataFrame
     X_test_transformed: pd.DataFrame
     y_train: pd.Series
     y_test: pd.Series
+    preprocessor: ColumnTransformer
     feature_names: List[str]
 
 
@@ -68,9 +71,12 @@ def preprocess_data(
     X_test_df = pd.DataFrame(X_test_t, columns=feature_names, index=X_test.index)
 
     return PreprocessArtifacts(
+        X_train_raw=X_train,
+        X_test_raw=X_test,
         X_train_transformed=X_train_df,
         X_test_transformed=X_test_df,
         y_train=y_train,
         y_test=y_test,
+        preprocessor=preprocessor,
         feature_names=feature_names,
     )

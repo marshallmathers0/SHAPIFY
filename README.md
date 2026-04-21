@@ -6,6 +6,24 @@ SHAPIFY is an end-to-end Explainable AI project that trains a black-box classifi
 
 Reproduce SHAP explanations from the paper *A Unified Approach to Interpreting Model Predictions*, validate SHAP's theoretical guarantee (local accuracy), and compare interpretability behavior against LIME.
 
+<<<<<<< HEAD
+=======
+## Assignments
+
+### Assignment 1: Core SHAP and LIME Framework
+- Implement SHAP TreeExplainer with global and local visualizations
+- Validate SHAP local accuracy theorem numerically
+- Compare SHAP with LIME explanations
+- Compare SHAP importance with model native feature importance
+
+### Assignment 2: Counterfactual Explanations (Extension)
+- Generate counterfactual examples using a stable nearest-opposite-instance method
+- Show minimum feature changes to flip the prediction for a user-selected dataset row
+- Quantify feature changes (deltas) required for prediction flip
+- Visualize original vs counterfactual feature changes
+- Practical demo: user gives one row index from `dataset.csv`
+
+>>>>>>> 35c1c0d (added counter factual explainations for jackfruit problem)
 ## Dataset
 
 - Source: OpenML `credit-g` (German Credit Risk)
@@ -59,12 +77,20 @@ Xai_Project/
 │   ├── model.py
 │   ├── shap_explainer.py
 │   ├── lime_explainer.py
+<<<<<<< HEAD
+=======
+│   ├── counterfactual_explainer.py
+>>>>>>> 35c1c0d (added counter factual explainations for jackfruit problem)
 │   └── evaluation.py
 ├── notebooks/
 │   └── shap_analysis.ipynb
 ├── results/
 │   ├── plots/
 │   ├── method_comparison.csv
+<<<<<<< HEAD
+=======
+│   ├── counterfactual_examples.csv
+>>>>>>> 35c1c0d (added counter factual explainations for jackfruit problem)
 │   └── outputs.txt
 ├── paper/
 │   ├── shap_paper.pdf
@@ -106,6 +132,20 @@ pip install -r requirements.txt
 python main.py
 ```
 
+<<<<<<< HEAD
+=======
+### Assignment 2 (row-based counterfactual)
+
+```bash
+python main.py --row-index 25
+```
+
+This returns:
+- original prediction for row 25 (Accepted/Rejected)
+- minimum feature changes to flip that prediction
+- saved counterfactual table and plot for that row
+
+>>>>>>> 35c1c0d (added counter factual explainations for jackfruit problem)
 ### Option B: One-click from VS Code Task
 
 1. Open Command Palette (`Ctrl+Shift+P`)
@@ -121,7 +161,13 @@ Generated files:
 - `results/plots/shap_waterfall_plot.png`
 - `results/plots/lime_local_explanation.png`
 - `results/plots/shap_vs_model_importance.png`
+<<<<<<< HEAD
 - `results/method_comparison.csv`
+=======
+- `results/plots/row_<index>_counterfactual_comparison.png`
+- `results/method_comparison.csv`
+- `results/counterfactual_examples.csv`
+>>>>>>> 35c1c0d (added counter factual explainations for jackfruit problem)
 - `results/outputs.txt`
 
 ## Key Evaluation Metrics Printed
@@ -135,6 +181,12 @@ Generated files:
 - Model `feature_importances_`
 - SHAP local-accuracy numeric check
 - SHAP vs LIME top-feature overlap
+<<<<<<< HEAD
+=======
+- Counterfactual explanations (minimum feature changes to flip prediction)
+- Counterfactual feature deltas (quantified changes)
+- Counterfactual vs Original comparison visualizations
+>>>>>>> 35c1c0d (added counter factual explainations for jackfruit problem)
 
 ## Architecture Notes
 
@@ -142,6 +194,10 @@ Generated files:
 - `src/shap_explainer.py` handles SHAP values, plots, and local-accuracy validation.
 - `src/lime_explainer.py` generates local LIME explanation for the same SHAP instance.
 - `src/evaluation.py` compares SHAP/LIME rankings and SHAP/model feature importance.
+<<<<<<< HEAD
+=======
+- `src/counterfactual_explainer.py` generates a practical counterfactual for representative cases.
+>>>>>>> 35c1c0d (added counter factual explainations for jackfruit problem)
 - Plotting uses a non-interactive backend for stable script execution.
 
 ## Troubleshooting
